@@ -1,0 +1,262 @@
+/* 1. RESET GERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", Arial, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+/* 2. TOPO (NAVBAR) */
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    height: 56px;
+    background: white;
+}
+
+/* Estilo do Logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: bold;
+    font-size: 18px;
+    letter-spacing: -1px;
+    cursor: pointer;
+}
+
+.play-icon {
+    background-color: red;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+/* Barra de Pesquisa igual à imagem */
+.nav-center {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 0 1 720px; /* Faz a barra crescer mas ter um limite */
+}
+
+.search-box {
+    display: flex;
+    width: 100%;
+    margin-left: 40px;
+}
+
+.search-box input {
+    width: 100%;
+    height: 40px;
+    padding: 0 16px;
+    border: 1px solid #ccc;
+    border-radius: 40px 0 0 40px;
+    font-size: 16px;
+    box-shadow: inset 0 1px 2px #eee; /* Efeito de profundidade */
+}
+
+.search-btn {
+    width: 64px;
+    height: 40px;
+    background: #f8f8f8;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-radius: 0 40px 40px 0;
+    cursor: pointer;
+    color: #333;
+}
+
+.mic-btn {
+    border: none;
+    background: #f2f2f2;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Ícones da Direita */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-right .icon {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.user-avatar {
+    width: 32px;  /* Tamanho da bolinha no topo */
+    height: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.user-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a foto preencha o círculo sem distorcer */
+}
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.menu-icon {
+    font-size: 20px;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+/* Centralizando a busca */
+.nav-center {
+    display: flex;
+    align-items: center;
+    width: 40%; /* Largura da barra de busca */
+}
+
+.search-box {
+    display: flex;
+    width: 100%;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    border-radius: 40px 0 0 40px; /* Arredondado só na esquerda */
+    outline: none;
+}
+
+.search-btn {
+    padding: 0 20px;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-radius: 0 40px 40px 0; /* Arredondado só na direita */
+    background: #f8f8f8;
+    cursor: pointer;
+}
+
+.nav-right {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* 3. BARRA DE CATEGORIAS */
+.categories {
+    display: flex;
+    gap: 12px;
+    padding: 12px 24px;
+    border-top: 1px solid #f2f2f2;
+    border-bottom: 1px solid #f2f2f2;
+    overflow-x: auto; /* Permite rolar se tiver muitas */
+}
+
+.cat-btn {
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: none;
+    background: #f2f2f2;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.cat-btn.active {
+    background: #000;
+    color: #fff;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px; /* Impede que os vídeos fiquem gigantes em telas grandes */
+    margin: 0 auto;    /* Centraliza a grade na tela */
+}
+
+.video-card {
+    width: 100%;
+    cursor: pointer;
+}
+
+.thumb {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Mantém o formato retangular de vídeo */
+    background-color: #e5e5e5;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden; /* Garante que a imagem não saia das bordas arredondadas */
+}
+
+.thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ESSENCIAL: Faz a imagem preencher o espaço sem distorcer */
+    display: block;
+}
+
+.time {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: rgba(0,0,0,0.8);
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+.info {
+    display: flex;
+    margin-top: 12px;
+    gap: 12px;
+}
+
+.avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0; /* Impede que o círculo amasse */
+    background-color: #ccc;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.text h3 {
+    font-size: 16px;
+    margin-bottom: 4px;
+    color: #0f0f0f;
+}
+
+.text p {
+    font-size: 14px;
+    color: #606060;
+}
